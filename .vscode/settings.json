@@ -1,0 +1,47 @@
+{
+    "kafanek-brain": {
+        "debug": true,
+        "logLevel": "debug",
+        "goldenRatio": 1.618033988749895,
+        "fibonacciSequence": [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144],
+        "version": "1.1.0"
+    },
+    "php.validate.executablePath": "/usr/bin/php",
+    "php.suggest.basic": false,
+    "intelephense.environment.phpVersion": "8.0",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/node_modules/**",
+        "**/vendor/**"
+    ],
+    "intelephense.stubs": [
+        "wordpress",
+        "woocommerce",
+        "elementor"
+    ],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "files.associations": {
+        "*.php": "php"
+    },
+    "files.watcherExclude": {
+        "**/vendor/**": true,
+        "**/node_modules/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true
+    },
+    "search.exclude": {
+        "**/vendor": true,
+        "**/node_modules": true
+    },
+    "editor.rulers": [80, 120],
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "phpcs.enable": true,
+    "phpcs.standard": "WordPress",
+    "phpcbf.enable": true,
+    "phpcbf.standard": "WordPress"
+}

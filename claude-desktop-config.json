@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "kafanek-brain-wordpress": {
+      "command": "node",
+      "args": [
+        "/Users/kolibric/Desktop/KolibriMCPs/FINAL_MCP_FILES/kolibreus-router-simple.js"
+      ],
+      "env": {
+        "WORDPRESS_URL": "https://mykolibri-academy.cz",
+        "WORDPRESS_USERNAME": "admin",
+        "WORDPRESS_APP_PASSWORD": "your_app_password_here",
+        "KAFANEK_BRAIN_ENABLED": "true"
+      },
+      "description": "Direct connection to Kafánek Brain WordPress plugin"
+    },
+    "kafanek-brain-direct": {
+      "command": "node",
+      "args": [
+        "-e",
+        "const http = require('http'); const https = require('https'); const server = new (require('events').EventEmitter)(); server.on('request', async (method, params) => { if (method === 'tools/list') { return { tools: [{ name: 'kafanek_generate_description', description: 'Generate product description using Kafánek Brain AI', inputSchema: { type: 'object', properties: { product_id: { type: 'number' } }, required: ['product_id'] } }] }; } if (method === 'tools/call' && params.name === 'kafanek_generate_description') { const url = 'https://mykolibri-academy.cz/wp-json/kafanek-brain/v1/generate'; const data = JSON.stringify({ product_id: params.arguments.product_id }); const options = { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_API_KEY' } }; return new Promise((resolve) => { const req = https.request(url, options, (res) => { let body = ''; res.on('data', (chunk) => body += chunk); res.on('end', () => resolve({ content: [{ type: 'text', text: body }] })); }); req.write(data); req.end(); }); } }); console.log(JSON.stringify({ jsonrpc: '2.0', result: server }));"
+      ],
+      "description": "Direct REST API connection to Kafánek Brain"
+    }
+  }
+}
