@@ -1,0 +1,28 @@
+# WordPress
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.bak
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# OS
+__MACOSX

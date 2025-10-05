@@ -3,7 +3,7 @@
  * Plugin Name: Kafánkův Mozek - AI WordPress Brain
  * Plugin URI: https://mykolibri-academy.cz
  * Description: Inteligentní AI asistent pro WordPress s WooCommerce a Elementor integrací
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Kolibri Academy
  * Author URI: https://mykolibri-academy.cz
  * License: GPL v2 or later
@@ -17,7 +17,7 @@
 if (!defined('ABSPATH')) exit;
 
 // Constants
-define('KAFANEK_BRAIN_VERSION', '1.2.1');
+define('KAFANEK_BRAIN_VERSION', '1.2.2');
 define('KAFANEK_BRAIN_PATH', plugin_dir_path(__FILE__));
 define('KAFANEK_BRAIN_URL', plugin_dir_url(__FILE__));
 define('KAFANEK_BRAIN_BASENAME', plugin_basename(__FILE__));
@@ -134,6 +134,9 @@ class Kafanek_Brain_Plugin {
         
         // AI Chatbot
         $this->load_module('chatbot/class-ai-chatbot.php', 'AI Chatbot', false);
+        
+        // AI Design Studio
+        $this->load_module('design-studio/ai-design-generator.php', 'AI Design Studio', false);
     }
     
     private function load_module($file, $name, $required = true) {
