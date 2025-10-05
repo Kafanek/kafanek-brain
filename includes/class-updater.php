@@ -8,8 +8,8 @@ if (!defined('ABSPATH')) exit;
 
 class Kafanek_Brain_Updater {
     
-    private $github_username = 'kolibric'; // Změňte na váš GitHub username
-    private $github_repo = 'kafanek-brain'; // Název vašeho repo
+    private $github_username = 'Kafanek'; // GitHub username
+    private $github_repo = 'kafanek-brain'; // Název repo
     private $plugin_slug = 'kafanek-brain/kafanek-brain.php';
     private $current_version;
     

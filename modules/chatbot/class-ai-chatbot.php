@@ -110,7 +110,7 @@ class Kafanek_AI_Chatbot {
         }
         
         $position = get_option('kafanek_chatbot_position', 'bottom-right');
-        $avatar = get_option('kafanek_chatbot_avatar', plugins_url('../../assets/images/bot-avatar.png', __FILE__));
+        $avatar = get_option('kafanek_chatbot_avatar', plugins_url('../../assets/images/kafanek-avatar.svg', __FILE__));
         
         ?>
         <div id="kafanek-chatbot-widget" class="position-<?php echo esc_attr($position); ?>">
