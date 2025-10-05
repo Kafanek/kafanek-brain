@@ -38,10 +38,18 @@ class Kafanek_Dashboard_Enhanced {
             return;
         }
         
+        // Design Tokens
+        wp_enqueue_style(
+            'kafanek-design-tokens',
+            KAFANEK_BRAIN_URL . 'assets/css/design-tokens.css',
+            [],
+            KAFANEK_BRAIN_VERSION
+        );
+        
         wp_enqueue_style(
             'kafanek-dashboard-enhanced',
             KAFANEK_BRAIN_URL . 'assets/css/dashboard-enhanced.css',
-            [],
+            ['kafanek-design-tokens'],
             KAFANEK_BRAIN_VERSION
         );
         

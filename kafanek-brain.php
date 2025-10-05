@@ -375,10 +375,18 @@ class Kafanek_Brain_Plugin {
             'api_url' => rest_url('kafanek-brain/v1')
         ]);
         
+        // Design Tokens (must load first)
+        wp_enqueue_style(
+            'kafanek-design-tokens',
+            KAFANEK_BRAIN_URL . 'assets/css/design-tokens.css',
+            [],
+            KAFANEK_BRAIN_VERSION
+        );
+        
         wp_enqueue_style(
             'kafanek-brain',
             KAFANEK_BRAIN_URL . 'assets/css/kafanek-brain.css',
-            [],
+            ['kafanek-design-tokens'],
             KAFANEK_BRAIN_VERSION
         );
     }

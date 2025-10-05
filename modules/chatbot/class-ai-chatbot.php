@@ -80,10 +80,17 @@ class Kafanek_AI_Chatbot {
             return;
         }
         
+        // Design Tokens
+        wp_enqueue_style('kafanek-design-tokens',
+            plugins_url('../../assets/css/design-tokens.css', __FILE__),
+            [],
+            KAFANEK_BRAIN_VERSION
+        );
+        
         wp_enqueue_style('kafanek-chatbot', 
             plugins_url('../../assets/css/chatbot-widget.css', __FILE__),
-            [],
-            '1.2.0'
+            ['kafanek-design-tokens'],
+            KAFANEK_BRAIN_VERSION
         );
         
         wp_enqueue_script('kafanek-chatbot',
