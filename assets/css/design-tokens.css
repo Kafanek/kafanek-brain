@@ -1,0 +1,251 @@
+/**
+ * Kafánek Brain Design Tokens - Premium UX 2025
+ * @version 1.2.5
+ * Unifikovaný design system pro celý plugin
+ */
+
+:root {
+    /* ==================== COLOR SYSTEM ==================== */
+    
+    /* Glassmorphism Colors */
+    --glass-white-subtle: rgba(255, 255, 255, 0.05);
+    --glass-white-light: rgba(255, 255, 255, 0.1);
+    --glass-white-medium: rgba(255, 255, 255, 0.15);
+    --glass-white-strong: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-border-strong: rgba(255, 255, 255, 0.3);
+    
+    /* Gradient Accents */
+    --gradient-primary: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    --gradient-accent: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);
+    --gradient-success: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+    --gradient-gold: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);
+    
+    /* Semantic Colors */
+    --color-text-primary: #1A202C;
+    --color-text-secondary: #4A5568;
+    --color-text-muted: #A0AEC0;
+    --color-text-light: rgba(255, 255, 255, 0.9);
+    
+    /* Status Colors */
+    --color-success: #4ADE80;
+    --color-warning: #FBBF24;
+    --color-error: #EF4444;
+    --color-info: #3B82F6;
+    
+    /* ==================== BLUR SYSTEM ==================== */
+    
+    --blur-light: blur(10px);
+    --blur-medium: blur(20px);
+    --blur-strong: blur(40px);
+    
+    /* ==================== SPACING (Golden Ratio φ = 1.618) ==================== */
+    
+    --space-xs: 8px;
+    --space-sm: 13px;   /* 8 * 1.618 ≈ 13 */
+    --space-md: 21px;   /* 13 * 1.618 ≈ 21 */
+    --space-lg: 34px;   /* 21 * 1.618 ≈ 34 */
+    --space-xl: 55px;   /* 34 * 1.618 ≈ 55 */
+    --space-2xl: 89px;  /* 55 * 1.618 ≈ 89 */
+    
+    /* ==================== BORDER RADIUS ==================== */
+    
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    --radius-full: 9999px;
+    
+    /* ==================== SHADOWS ==================== */
+    
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.2);
+    
+    /* Focus/Hover Shadows */
+    --shadow-focus: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    --shadow-glow: 0 0 0 8px rgba(102, 126, 234, 0.3);
+    
+    /* ==================== TYPOGRAPHY ==================== */
+    
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    
+    /* Font Sizes */
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
+    
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.6;
+    --line-height-loose: 2;
+    
+    /* ==================== ANIMATIONS ==================== */
+    
+    /* Easing Functions */
+    --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    
+    /* Durations */
+    --duration-fast: 0.15s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    
+    /* Transitions */
+    --transition-fast: all var(--duration-fast) var(--ease-smooth);
+    --transition-normal: all var(--duration-normal) var(--ease-smooth);
+    --transition-slow: all var(--duration-slow) var(--ease-smooth);
+    
+    /* ==================== BREAKPOINTS ==================== */
+    
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1440px;
+    
+    /* ==================== Z-INDEX SCALE ==================== */
+    
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+    --z-toast: 700;
+    --z-max: 9999;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Glass Effect Base */
+.glass-effect {
+    background: var(--glass-white-light);
+    -webkit-backdrop-filter: var(--blur-medium);
+    backdrop-filter: var(--blur-medium);
+    border: 1px solid var(--glass-border);
+}
+
+.glass-effect-strong {
+    background: var(--glass-white-medium);
+    -webkit-backdrop-filter: var(--blur-strong);
+    backdrop-filter: var(--blur-strong);
+    border: 1px solid var(--glass-border-strong);
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+    background: var(--gradient-primary);
+}
+
+.bg-gradient-accent {
+    background: var(--gradient-accent);
+}
+
+/* Smooth Animations */
+.animate-smooth {
+    transition: var(--transition-normal);
+}
+
+.animate-fast {
+    transition: var(--transition-fast);
+}
+
+/* Shadows */
+.shadow-glass {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Typography */
+.font-primary {
+    font-family: var(--font-primary);
+}
+
+/* ==================== GLOBAL ANIMATIONS ==================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes floatPulse {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-4px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+
+@media print {
+    .glass-effect,
+    .glass-effect-strong {
+        background: white !important;
+        backdrop-filter: none !important;
+        border: 1px solid #e0e0e0 !important;
+    }
+}
